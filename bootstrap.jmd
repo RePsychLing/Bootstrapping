@@ -3,10 +3,6 @@
 Julia is well-suited to implementing bootstrapping and other simulation-based methods for statistical models.
 The `parametricbootstrap` function in the [MixedModels package](https://github.com/JuliaStats/MixedModels.jl) provides an efficient parametric bootstrap for linear mixed-effects models.
 
-```@docs
-parametricbootstrap
-```
-
 ## The parametric bootstrap
 
 [Bootstrapping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)) is a family of procedures
@@ -25,7 +21,11 @@ For example, a simple linear mixed-effects model for the `Dyestuff` data in the 
 package for [`R`](https://www.r-project.org) is fit by
 
 ```{julia;term=true}
-using DataFrames, Gadfly, MixedModels, Random
+using DataFrames   
+using Gadfly       # graphics
+using MixedModels
+using Random       # set seed for random number generator
+using RCall        # communicate with r
 ```
 
 ```{julia;term=true}
